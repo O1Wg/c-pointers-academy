@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "C & Pointers Academy"
+description = "An interactive learning website that teaches students the C programming language with a deep focus on pointers and memory. It combines structured lessons with explanatory text, annotated code examples, step-by-step memory diagrams that visualize the stack and heap, worked examples with full solutions, quizzes with instant feedback, a curated library of external resources, and local progress tracking."
+version = "1.0.0"
+id = "artifacts/c-pointers-academy"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24175
+
+[services.development]
+run = "pnpm --filter @workspace/c-pointers-academy run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/c-pointers-academy", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/c-pointers-academy/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24175"
+BASE_PATH = "/"
