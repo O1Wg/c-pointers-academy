@@ -5,6 +5,7 @@ import { lessons, modules, lessonsInModule } from "@/content/lessons";
 import { workedExamples } from "@/content/examples";
 import { firstPointerDiagram } from "@/content/diagrams";
 import { MemoryDiagram } from "@/components/memory-diagram";
+import { StarCta } from "@/components/star-cta";
 import { DifficultyPill, Eyebrow, ProgressBar } from "@/components/bits";
 import { useProgress } from "@/lib/progress";
 import { useSeo } from "@/lib/seo";
@@ -214,6 +215,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <StarCta />
     </div>
   );
 }

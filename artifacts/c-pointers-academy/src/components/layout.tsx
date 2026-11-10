@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
-import { Github, Menu, Moon, Sun, X } from "lucide-react";
+import { Github, Menu, Moon, Star, Sun, X } from "lucide-react";
 import { useProgress } from "@/lib/progress";
 import { lessons } from "@/content/lessons";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { href: "/lessons", label: "Lessons" },
   { href: "/examples", label: "Examples" },
+  { href: "/memory-layout", label: "Memory Layout" },
   { href: "/visualizer", label: "Visualizer" },
   { href: "/resources", label: "Resources" },
   { href: "/progress", label: "Progress" },
@@ -114,6 +115,7 @@ export function Layout({ children }: { children: ReactNode }) {
             <ul className="mt-3 space-y-2 text-sm font-bold">
               <li><Link href="/lessons" className="hover:text-primary">Curriculum</Link></li>
               <li><Link href="/examples" className="hover:text-primary">Worked examples</Link></li>
+              <li><Link href="/memory-layout" className="hover:text-primary">Memory layout</Link></li>
               <li><Link href="/visualizer" className="hover:text-primary">Memory visualizer</Link></li>
             </ul>
           </div>
@@ -122,6 +124,11 @@ export function Layout({ children }: { children: ReactNode }) {
             <ul className="mt-3 space-y-2 text-sm font-bold">
               <li><Link href="/resources" className="hover:text-primary">Resources</Link></li>
               <li><Link href="/progress" className="hover:text-primary">Your progress</Link></li>
+              <li>
+                <a href="https://github.com/O1Wg/c-pointers-academy" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-primary" data-testid="link-footer-star">
+                  <Star className="h-3.5 w-3.5" /> Like it? Star it on GitHub
+                </a>
+              </li>
             </ul>
             <p className="mt-6 font-mono text-xs text-muted-foreground">return 0; /* exited normally */</p>
           </div>

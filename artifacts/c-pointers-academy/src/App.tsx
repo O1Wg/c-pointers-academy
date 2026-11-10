@@ -11,6 +11,7 @@ import LessonPage from '@/pages/lesson';
 import ExamplesPage from '@/pages/examples';
 import ExamplePage from '@/pages/example';
 import VisualizerPage from '@/pages/visualizer';
+import MemoryLayoutPage from '@/pages/memory-layout';
 import ResourcesPage from '@/pages/resources';
 import ProgressPage from '@/pages/progress';
 import {
@@ -32,6 +33,7 @@ function Router() {
           <Route path="/lessons/:slug" component={LessonPage} />
           <Route path="/examples" component={ExamplesPage} />
           <Route path="/examples/:slug" component={ExamplePage} />
+          <Route path="/memory-layout" component={MemoryLayoutPage} />
           <Route path="/visualizer" component={VisualizerPage} />
           <Route path="/resources" component={ResourcesPage} />
           <Route path="/progress" component={ProgressPage} />
